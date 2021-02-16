@@ -23,13 +23,13 @@ conda activate dual-stream
 ## Prepare dataset
 We use `lmdb` as dataset to reduce time for loading image.
 You can download processed vimeo90k lmdb files from this [link]().
-If you want to process the dataset on your own, you can use `dataset/create_lmdb_mp.py`
+If you want to process the original [vimeo90k](http://toflow.csail.mit.edu/) dataset on your own, you can use `dataset/create_lmdb_mp.py`
 
 ## Evaluation
-Download the pretrained weights from this [link]() and place them in `pretrained`, then run:
+Download the pretrained weights from this [link](https://drive.google.com/drive/folders/1JLAc1wtfPzvxUfp8T0irEKf1N8GbhCo9?usp=sharing) and place them in `pretrained`, then run:
 
 ```
-python test_model.py --data_root ./data/vimeo90k/ --sr_type ESPCN --it_type SSM --two_mask --forward_MsMt --forward_F --forward_R --stsr_weight ./pretrained/STSR_best.pth --sr_weight ./pretrained/ESPCN_33.pth --it_weight ./pretrained/SuperSloMo_132.pth --batch_size 24
+python test_model.py --data_root ./data/vimeo90k/ --sr_type ESPCN --it_type SSM --two_mask --forward_MsMt --forward_F --forward_R --stsr_weight ./pretrained/STSR_best.pth --sr_weight ./pretrained/ESPCN.pth --it_weight ./pretrained/SuperSloMo.pth --batch_size 24
 ```
 
 ## Citation
@@ -42,3 +42,6 @@ If you find this work useful for your research, please cite:
  year = {2021}
 }
 ```
+
+## Acknowledgments
+Based on different architectures, we modify the source codes from [SuperSloMo](https://github.com/avinashpaliwal/Super-SloMo), [DAIN](https://github.com/baowenbo/DAIN) and [SAN](https://github.com/daitao/SAN). We also use the script for processing images to lmdb from [EDVR](https://github.com/xinntao/EDVR).
