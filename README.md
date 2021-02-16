@@ -8,8 +8,11 @@ Min-Yuan Tseng, [Yen-Chung Chen](https://yenchungchen.github.io/), Yi-Lun Lee, [
 
 ## Environment
 Python3.6
+
 PyTorch 1.1.0
+
 CUDA 9.0
+
 Other dependencies are listed in `environment.yml`
 Use conda to create the environment and activate it:
 ```
