@@ -4,7 +4,9 @@ Min-Yuan Tseng, [Yen-Chung Chen](https://yenchungchen.github.io/), Yi-Lun Lee, [
 
 [Winter Conference on Applications of Computer Vision (WACV), 2021](http://wacv2021.thecvf.com/home)
 
-[[Paper]](http://people.cs.nctu.edu.tw/~walon/publications/tseng2021wacv.pdf)[[Video]](http://people.cs.nctu.edu.tw/~walon/publications/tseng2021wacv_video.mp4)[[Supplementary]](http://people.cs.nctu.edu.tw/~walon/publications/tseng2021wacv_video.mp4)
+[[Paper]](http://people.cs.nctu.edu.tw/~walon/publications/tseng2021wacv.pdf)
+[[Video]](http://people.cs.nctu.edu.tw/~walon/publications/tseng2021wacv_video.mp4)
+[[Supplementary]](http://people.cs.nctu.edu.tw/~walon/publications/tseng2021wacv_supp.pdf)
 
 ## Environment
 Python3.6
@@ -22,11 +24,11 @@ conda activate dual-stream
 
 ## Prepare dataset
 We use `lmdb` as dataset to reduce time for loading image.
-You can download processed vimeo90k lmdb files from this [link]().
-If you want to process the original [vimeo90k](http://toflow.csail.mit.edu/) dataset on your own, you can use `dataset/create_lmdb_mp.py`
+You can download processed vimeo90k lmdb files from this [link](https://drive.google.com/drive/folders/11_g_iSkLFntqKwtccgZPAAoB5RwgZezh?usp=sharing).
+If you want to process the original [vimeo90k](http://toflow.csail.mit.edu/) dataset on your own, you can use `dataset/create_lmdb_mp.py`.
 
 ## Evaluation
-Download the pretrained weights from this [link](https://drive.google.com/drive/folders/1JLAc1wtfPzvxUfp8T0irEKf1N8GbhCo9?usp=sharing) and place them in `pretrained`, then run:
+Download the pretrained weights (`ESPCN.pth`, `SuperSloMo.pth` and `STSR_best.pth`) from this [link](https://drive.google.com/drive/folders/1JLAc1wtfPzvxUfp8T0irEKf1N8GbhCo9?usp=sharing) and place them in `pretrained`, then run:
 
 ```
 python test_model.py --data_root ./data/vimeo90k/ --sr_type ESPCN --it_type SSM --two_mask --forward_MsMt --forward_F --forward_R --stsr_weight ./pretrained/STSR_best.pth --sr_weight ./pretrained/ESPCN.pth --it_weight ./pretrained/SuperSloMo.pth --batch_size 24
