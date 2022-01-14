@@ -34,6 +34,13 @@ Download the pretrained weights (`ESPCN.pth`, `SuperSloMo.pth` and `STSR_best.pt
 python test_model.py --data_root ./data/vimeo90k/ --sr_type ESPCN --it_type SSM --two_mask --forward_MsMt --forward_F --forward_R --stsr_weight ./pretrained/STSR_best.pth --sr_weight ./pretrained/ESPCN.pth --it_weight ./pretrained/SuperSloMo.pth --batch_size 24
 ```
 
+## Train
+run:
+
+```
+python train.py --data_root ./data/vimeo90k/ --sr_type ESPCN --it_type SSM --two_mask --forward_MsMt --forward_F --forward_R --batch_size 24
+```
+
 ## Citation
 If you find this work useful for your research, please cite:
 ```
